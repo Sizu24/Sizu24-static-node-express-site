@@ -1,0 +1,50 @@
+{
+    "properties": [
+        {
+            "id": 0,
+            "project": "Random Quote Generator",
+            "description": "Generates random quotes",
+            "technologies": ["JavaScript, CSS"],
+            "live_link": "",
+            "github_link": "",
+            "image_urls": ""
+        },
+        {
+            "id": 1,
+            "project": "Data Pagination",
+            "description": "",
+            "technologies": ["JavaScript"],
+            "live_link": "",
+            "github_link": "",
+            "image_urls": ""
+        },
+        {
+            "id": 2,
+            "project": "Interactive Form",
+            "description": "",
+            "technologies": ["JavaScript"],
+            "live_link": "",
+            "github_link": "",
+            "image_urls": ""
+        },
+        {
+            "id": 3,
+            "project": "Oop Game Show",
+            "description": "",
+            "technologies": ["JavaScript"],
+            "live_link": "",
+            "github_link": "",
+            "image_urls": ""
+        },
+        {
+            "id": 4,
+            "project": "Public API",
+            "description": "",
+            "technologies": ["JavaScript, AJAX"],
+            "live_link": "",
+            "github_link": "",
+            "image_urls": ""
+        }
+
+    ]
+}
