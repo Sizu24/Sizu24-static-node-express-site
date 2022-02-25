@@ -362,3 +362,14 @@ nav a span {
     max-width: 1200px;
   }
 }
+.portfolio-intro{
+  background-color: #232323;
+}
+
+.portfolio-intro h1{
+  color: #fff;
+}
+
+.cell img{
+  box-shadow: 5px 10px 15px 1px rgba(10, 10, 10, 0.2);
+}
