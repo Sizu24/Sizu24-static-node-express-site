@@ -20,24 +20,22 @@ block content
         p #{description}
 
       .project-tech-links-box.box
-        h6 #{technologies}
+        h6 Technologies
         ul
 
           //- Use an `each` iterator and interpolation to dynamically replace the li tags below with the technologies listed for this project
-          li HTML
-          li CSS
-          li JavaScript
+          each technology in technologies
+            li= technology
 
         //- Add the href values to the links below
-        a.btn-link(href='') Live Demo
-        a.btn-link(href='') GitHub Repo
+        a.btn-link(href= liveLink target='_blank') Live Demo
+        a.btn-link(href= github target='_blank') GitHub Repo
 
     .project-img-box.box
 
       //- Replace the URLs in the src attributes below with interpolated template literals to dynamically add your project images, and add descriptions to the alt attributes
-      img.project-img(src='https://placehold.it/1200x550', alt='')
-      img.project-img(src='https://placehold.it/1200x550', alt='')
-      img.project-img(src='https://placehold.it/1200x550', alt='')
+      img.project-img(src= imageLarge, width='1200', height='550', alt= alt)
+      img.project-img(src= imageSmall, alt= alt)
 
     nav.nav
       a(href='/')

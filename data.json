@@ -3,47 +3,52 @@
         {
             "id": 0,
             "project": "Random Quote Generator",
-            "description": "Generates random quotes",
-            "technologies": ["JavaScript, CSS"],
-            "live_link": "",
-            "github_link": "",
-            "image_urls": ""
+            "description": "Generates a random quote after set time, or click",
+            "technologies": ["JavaScript", "CSS"],
+            "live_link": "https://shahchisty.com/random-quote-generator/",
+            "github_link": "https://github.com/Sizu24/random-quote-generator",
+            "image_urls": ["/static/img/random-quote.png", "/static/img/random-quote-sm.png"],
+            "alt": "Quote in front of green background"
         },
         {
             "id": 1,
             "project": "Data Pagination",
-            "description": "",
+            "description": "Created pages to display portions of user data for each page that user can navigate through",
             "technologies": ["JavaScript"],
-            "live_link": "",
-            "github_link": "",
-            "image_urls": ""
+            "live_link": "https://shahchisty.com/data-pagination-and-filtering/",
+            "github_link": "https://github.com/Sizu24/data-pagination-and-filtering",
+            "image_urls": ["/static/img/data-pagination.png", "/static/img/data-pagination-sm.png"],
+            "alt": "User profile cards in front of blue background"
         },
         {
             "id": 2,
             "project": "Interactive Form",
-            "description": "",
-            "technologies": ["JavaScript"],
-            "live_link": "",
-            "github_link": "",
-            "image_urls": ""
+            "description": "Form that takes input from user, and shows notificaitons if incorrectly filled out, or missing data",
+            "technologies": ["JavaScript", "Regex"],
+            "live_link": "https://shahchisty.com/Interactive-Form/",
+            "github_link": "https://github.com/Sizu24/Interactive-Form",
+            "image_urls": ["/static/img/interactive-form.png", "/static/img/interactive-form-sm.png"],
+            "alt": "Form with text input boxes and check boxes"
         },
         {
             "id": 3,
             "project": "Oop Game Show",
-            "description": "",
-            "technologies": ["JavaScript"],
-            "live_link": "",
-            "github_link": "",
-            "image_urls": ""
+            "description": "Word guessing game. Player guesses letter to reveal correct letter on board",
+            "technologies": ["JavaScript", "CSS"],
+            "live_link": "https://shahchisty.com/OOP-Game-Show-App/",
+            "github_link": "https://github.com/Sizu24/OOP-Game-Show-App/tree/main",
+            "image_urls": ["/static/img/oop-game-show.png", "/static/img/oop-game-show-sm.png"],
+            "alt": "Boxes that hide letters that players can guess, with keyboard underneath"
         },
         {
             "id": 4,
             "project": "Public API",
-            "description": "",
-            "technologies": ["JavaScript, AJAX"],
-            "live_link": "",
-            "github_link": "",
-            "image_urls": ""
+            "description": "Fetch data from API, and filter profiles by search input. Modal shows details for selected profile",
+            "technologies": ["JavaScript", "CSS", "AJAX", "API"],
+            "live_link": "https://shahchisty.com/public-api-requests/",
+            "github_link": "https://github.com/Sizu24/public-api-requests",
+            "image_urls": ["/static/img/public-api.png", "/static/img/public-api-sm.png"],
+            "alt": "Profile cards with modal pop up in middle showing details for selected profile"
         }
 
     ]
