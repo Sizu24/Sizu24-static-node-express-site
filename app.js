@@ -5,13 +5,13 @@ const app = express();
 const port = 3000;
 
 app.set('view engine', 'pug');
-app.use(express.static('public'));
 
-// Static server for public folder
+// Static server for public folder to serve images, css, and js script file
 app.use('/static', express.static('public'));
 
 // Routes
 app.get('/', (req, res)=>{
+    // render index.pug and create "projects" variable with data from JSON file to use in index.pug
     res.render('index', {projects: data.properties});
     // Saves properties object from data.json file to local data scoped to the index.pug file
     res.locals = data.properties;
@@ -28,6 +28,7 @@ app.get('/about', (req, res)=>{
  * Pug uses the properties in the object as variables in the Pug files
  */
 app.get('/project/:id', (req, res)=>{
+    // params is the data coming from the ":id", and using the "id" property from JSON
     const paramData = data.properties[req.params.id];
 
     res.render('project', {
@@ -40,8 +41,6 @@ app.get('/project/:id', (req, res)=>{
         imageSmall: paramData.image_urls[1]
     });
 });
-
-// Middleware
 
 // Errors
 
