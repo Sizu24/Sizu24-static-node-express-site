@@ -11,10 +11,11 @@ app.use('/static', express.static('public'));
 
 // Routes
 app.get('/', (req, res)=>{
-    // render index.pug and create "projects" variable with data from JSON file to use in index.pug
-    res.render('index', {projects: data.properties});
     // Saves properties object from data.json file to local data scoped to the index.pug file
     res.locals = data.properties;
+    // render index.pug and create "projects" variable with data from JSON file to use in index.pug
+    res.render('index', {projects: data.properties});
+
 });
 
 app.get('/about', (req, res)=>{
@@ -27,19 +28,31 @@ app.get('/about', (req, res)=>{
  * Assigns data to variables for interpolation of data in project.pug file
  * Pug uses the properties in the object as variables in the Pug files
  */
-app.get('/project/:id', (req, res)=>{
+app.get('/project/:id', (req, res, next)=>{
+
     // params is the data coming from the ":id", and using the "id" property from JSON
     const paramData = data.properties[req.params.id];
 
-    res.render('project', {
-        projects: paramData.project,
-        description: paramData.description,
-        technologies: paramData.technologies,
-        liveLink: paramData.live_link,
-        github: paramData.github_link,
-        imageLarge: paramData.image_urls[0],
-        imageSmall: paramData.image_urls[1]
-    });
+    // Check to see if data exists. If so, render the project.pug file and assign all of the variables
+    if(paramData){
+   
+        res.render('project', {
+            projects: paramData.project,
+            description: paramData.description,
+            technologies: paramData.technologies,
+            liveLink: paramData.live_link,
+            github: paramData.github_link,
+            imageLarge: paramData.image_urls[0],
+            imageSmall: paramData.image_urls[1]
+        });
+    }else{
+        // Run error for 404 error code
+        const err = new Error();
+        err.status = 404;
+        err.message = "Page wasn't found, oh no!";
+        console.log("Page Not Found.", `Error code: ${err.status}`);
+        next(err);
+    }
 });
 
 // Errors
@@ -50,8 +63,9 @@ app.get('/project/:id', (req, res)=>{
  */
 app.use((req, res, next)=>{
     const err = new Error();
-    err.message = "Page wasn't found, oh no!"
+    err.message = "Page wasn't found, oh no!";
     err.status = 404;
+    console.log("Page wasn't found, oh no!", `Error code: ${err.status}`);
     next(err);
 });
 
@@ -61,8 +75,10 @@ app.use((req, res, next)=>{
  * next to error handler
  */
 app.use((req, res, next)=>{
-    const err = new Error("Hey there's an error!");
+    const err = new Error();
+    err.message = "Looks like something went wrong";
     err.status = 500;
+    console.log("Looks like something went wrong.", `Error code: ${err.status}`);
     next(err);
 });
 
@@ -74,14 +90,12 @@ app.use((req, res, next)=>{
  */
 app.use((err, req, res, next)=>{
     res.locals.error = err;
-    if(err.status === 400){
+    if(err.status === 404){
         res.render('page-not-found', err);
         res.status(err.status);
-        console.error(err.message);
     }else{
         res.render('error', err);
         res.status(err.status);
-        console.log(err.message);
     }
 });
 
